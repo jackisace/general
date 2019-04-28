@@ -2,13 +2,13 @@ source $VIMRUNTIME/vimrc_example.vim
 behave xterm
 
 set nobackup       "no backup files
-set noundofile
+set noundofile	   "no undo files
 set nowritebackup  "only in case you don't want a backup file while editing
 set noswapfile     "no swap files
 
 "nnoremap <F5> :!./run.bat<CR><CR>
 nnoremap <F2> :e $HOME/_vimrc<CR><CR>
-nnoremap <F5> :!python main.py<CR>
+nnoremap <F5> :!python main.py > out<CR><CR>:only<CR>:vs out<CR><C-W><C-R><C-W><C-W>
 
 set diffexpr=MyDiff()
 function MyDiff()
